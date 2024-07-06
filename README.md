@@ -35,6 +35,7 @@ Then, you can use the `ColorPickerComponent` in your templates:
 
 ```html
 <lib-color-picker
+  [(ngModel)]="color"
   [colors]="colorArray"
   [squareSize]="30"
   [maxColors]="50"
@@ -42,6 +43,8 @@ Then, you can use the `ColorPickerComponent` in your templates:
   (colorChange)="onColorChange($event)"
 >
 </lib-color-picker>
+
+
 ```
 
 ## Inputs
@@ -81,7 +84,7 @@ export class AppComponent {
   ];
   selectedColor: string;
   onColorChange(color: string) {
-    this.selectedColor = color;
+    //this.selectedColor = color;
   }
 }
 ```
@@ -92,6 +95,7 @@ export class AppComponent {
 <div>
   <h1>Color Picker Example</h1>
   <lib-color-picker
+    [(ngModel)]="selectedColor"
     [colors]="colorArray"
     [squareSize]="30"
     [maxColors]="50"
