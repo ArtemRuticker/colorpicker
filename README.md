@@ -6,25 +6,26 @@ The `ColorPickerComponent` is an Angular component designed to display a customi
 
 To use the `ColorPickerComponent` in your project, install it via npm:
 
+```bash
+npm install color-picker
+```
+
+
 
 ## Usage
 
 
 First, import the `ColorPickerComponent` into your Angular module:
 
-typescript
-
-
-
-`import { NgModule } from '@angular/core'; import { BrowserModule } from '@angular/platform-browser'; import { ReactiveFormsModule } from '@angular/forms'; import { ColorPickerModule } from 'color-picker';  @NgModule({   declarations: [     AppComponent   ],   imports: [     BrowserModule,     ReactiveFormsModule,     ColorPickerModule   ],   providers: [],   bootstrap: [AppComponent] }) export class AppModule { }`
+```typescript
+import { NgModule } from '@angular/core'; import { BrowserModule } from '@angular/platform-browser'; import { ReactiveFormsModule } from '@angular/forms'; import { ColorPickerModule } from 'color-picker';  @NgModule({   declarations: [     AppComponent   ],   imports: [     BrowserModule,     ReactiveFormsModule,     ColorPickerModule   ],   providers: [],   bootstrap: [AppComponent] }) export class AppModule { }
+```
 
 Then, you can use the `ColorPickerComponent` in your templates:
 
-html
-
-
-
-`<lib-color-picker   [colors]="colorArray"   [squareSize]="30"   [maxColors]="50"   [numColumns]="5"   (colorChange)="onColorChange($event)"> </lib-color-picker>`
+```html
+<lib-color-picker   [colors]="colorArray"   [squareSize]="30"   [maxColors]="50"   [numColumns]="5"   (colorChange)="onColorChange($event)"> </lib-color-picker>
+```
 
 ## Inputs
 
@@ -45,49 +46,90 @@ Here's a complete example of how to use the `ColorPickerComponent` in an Angular
 
 ### TypeScript (Component)
 
-typescript
-
-Копировать код
-
-`import { Component } from '@angular/core';  @Component({   selector: 'app-root',   templateUrl: './app.component.html',   styleUrls: ['./app.component.css'] }) export class AppComponent {   colorArray: string[] = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];   selectedColor: string;    onColorChange(color: string) {     this.selectedColor = color;   } }`
+```typescript
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  colorArray: string[] = [
+    '#FF0000',
+    '#00FF00',
+    '#0000FF',
+    '#FFFF00',
+    '#FF00FF',
+    '#00FFFF',
+  ];
+  selectedColor: string;
+  onColorChange(color: string) {
+    this.selectedColor = color;
+  }
+}
+```
 
 ### HTML (Template)
 
-html
+```html
+<div>
+  <h1>Color Picker Example</h1>
+  <lib-color-picker
+    [colors]="colorArray"
+    [squareSize]="30"
+    [maxColors]="50"
+    [numColumns]="5"
+    (colorChange)="onColorChange($event)"
+  >
+  </lib-color-picker>
+  <p>Selected Color: {{ selectedColor }}</p>
+</div>
 
-Копировать код
-
-`<div>   <h1>Color Picker Example</h1>   <lib-color-picker     [colors]="colorArray"     [squareSize]="30"     [maxColors]="50"     [numColumns]="5"     (colorChange)="onColorChange($event)">   </lib-color-picker>   <p>Selected Color: {{ selectedColor }}</p> </div>`
+```
 
 Styling
 -------
 
 You can customize the appearance of the `ColorPickerComponent` by modifying the CSS classes used in the component:
 
-css
-
-Копировать код
-
-`.color-picker {   display: flex;   flex-wrap: wrap;   gap: 2px;   max-width: 100%; }  .color-container {   position: relative;   display: flex;   align-items: center;   justify-content: center; }  .color-square {   cursor: pointer;   transition: border 0.3s; }  .color-border {   position: absolute;   border: 2px solid black;   box-sizing: border-box; }`
+```css
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  max-width: 100%;
+}
+.color-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-square {
+  cursor: pointer;
+  transition: border 0.3s;
+}
+.color-border {
+  position: absolute;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+```
 
 Development
 -----------
 
 To contribute to the development of the `ColorPickerComponent`, clone the repository and install the dependencies:
 
-bash
-
-Копировать код
-
-`git clone https://github.com/your-repo/color-picker.git cd color-picker npm install`
+```bash
+git clone https://github.com/your-repo/color-picker.git cd color-picker npm install
+```
 
 You can then start the development server to see your changes:
 
-bash
-
-Копировать код
-
-`npm start`
+```bash
+npm start
+```
 
 Publishing
 ----------
@@ -96,35 +138,27 @@ To publish the library to npm, follow these steps:
 
 1.  Build the library:
     
-    bash
-    
-    Копировать код
-    
-    `ng build color-picker`
+    ```bash
+    ng build color-picker
+    ```
     
 2.  Navigate to the `dist/color-picker` directory:
     
-    bash
-    
-    Копировать код
-    
-    `cd dist/color-picker`
+    ```bash    
+     cd dist/color-picker
+    ```
     
 3.  Log in to npm (if you are not already logged in):
     
-    bash
-    
-    Копировать код
-    
-    `npm login`
+    ```bash    
+    npm login
+    ```
     
 4.  Publish the library:
     
-    bash
-    
-    Копировать код
-    
-    `npm publish --access public`
+    ```bash    
+    npm publish --access public
+    ```
     
 
 License
@@ -136,8 +170,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 This documentation provides an overview of the `ColorPickerComponent`, including installation, usage, inputs, outputs, and an example. This should help users quickly understand how to integrate and use the component in their Angular applications.
 
-go
-
-Копировать код
-
-``Скопируйте этот текст в ваш `README.md` файл, и он будет готов для использования в вашем репозитории на GitHub и для публикации на npm. Не забудьте заменить `your-repo` на реальный URL вашего репозитория на GitHub и `color-picker` на имя вашего пакета на npm.``
