@@ -6,8 +6,6 @@ The `ColorPickerComponent` is an Angular component designed to display a customi
 
 To use the `ColorPickerComponent` in your project, install it via npm:
 
-```bash
-npm install your-package-name
 
 ## Usage
 
@@ -16,7 +14,7 @@ First, import the `ColorPickerComponent` into your Angular module:
 
 typescript
 
-Копировать код
+
 
 `import { NgModule } from '@angular/core'; import { BrowserModule } from '@angular/platform-browser'; import { ReactiveFormsModule } from '@angular/forms'; import { ColorPickerModule } from 'color-picker';  @NgModule({   declarations: [     AppComponent   ],   imports: [     BrowserModule,     ReactiveFormsModule,     ColorPickerModule   ],   providers: [],   bootstrap: [AppComponent] }) export class AppModule { }`
 
@@ -24,12 +22,11 @@ Then, you can use the `ColorPickerComponent` in your templates:
 
 html
 
-Копировать код
+
 
 `<lib-color-picker   [colors]="colorArray"   [squareSize]="30"   [maxColors]="50"   [numColumns]="5"   (colorChange)="onColorChange($event)"> </lib-color-picker>`
 
-Inputs
-------
+## Inputs
 
 *   `colors` (string\[\]): An array of color strings to be displayed in the color picker.
 *   `squareSize` (number): The size of each color square in pixels. Default is 20.
