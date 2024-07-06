@@ -18,13 +18,30 @@ npm install color-picker
 First, import the `ColorPickerComponent` into your Angular module:
 
 ```typescript
-import { NgModule } from '@angular/core'; import { BrowserModule } from '@angular/platform-browser'; import { ReactiveFormsModule } from '@angular/forms'; import { ColorPickerModule } from 'color-picker';  @NgModule({   declarations: [     AppComponent   ],   imports: [     BrowserModule,     ReactiveFormsModule,     ColorPickerModule   ],   providers: [],   bootstrap: [AppComponent] }) export class AppModule { }
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ColorPickerModule } from 'color-picker';
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, ReactiveFormsModule, ColorPickerModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
 ```
 
 Then, you can use the `ColorPickerComponent` in your templates:
 
 ```html
-<lib-color-picker   [colors]="colorArray"   [squareSize]="30"   [maxColors]="50"   [numColumns]="5"   (colorChange)="onColorChange($event)"> </lib-color-picker>
+<lib-color-picker
+  [colors]="colorArray"
+  [squareSize]="30"
+  [maxColors]="50"
+  [numColumns]="5"
+  (colorChange)="onColorChange($event)"
+>
+</lib-color-picker>
 ```
 
 ## Inputs
