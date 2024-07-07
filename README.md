@@ -1,6 +1,6 @@
 # Palette Picker Component
 
-The `PalettePickerComponent` is an Angular component that allows users to select a color from a predefined palette. This component is highly configurable and supports two-way data binding, making it easy to integrate with Angular forms.
+The `PalettePickerComponent` is an Angular component that allows users to select a color from a predefined palette. This component is highly configurable and supports two-way data binding, making it easy to integrate with Angular forms. This component was created for porting to Angular and replacing the functionality of Kendo ColorPicker. The component code and documentation were generated using ChatGPT 4.o.
 
 ## Installation
 
